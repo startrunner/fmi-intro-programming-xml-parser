@@ -80,6 +80,8 @@ bool try_parse_segment(cached_token_stream &tokenStream, xpath_query_segment &se
         segment.attributeValueFiters
     );
     segment.elementName = identifier;
+
+    return true;
 }
 
 
