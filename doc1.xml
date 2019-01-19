@@ -1,0 +1,29 @@
+<xml>
+  <person id='0'>
+    <name>John Smith</name>
+    <address>USA</address>
+  </person>
+  <person id='1' egn="6503022716">
+    <name>Ivan Petrov</name>
+    <address>
+		Bulgaria
+		<notes>ot pernik e</notes>
+	</address>
+  </person>
+</xml>
+<another_tag>
+	<person>
+		<name>Pesho</name>
+	</person>
+	<person>
+		<name>Gosho</name>
+	</person>
+	<orangutan>
+		<name>
+			Stamat
+			<notes>
+				ne si znae imeto
+			</notes>
+		</name>
+	</orangutan>
+</another_tag>
