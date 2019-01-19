@@ -2,9 +2,9 @@
 
 https://github.com/startrunner/fmi-intro-programming-xml-parser/
 
-#### Проект: XML Parser
+**Проект: XML Parser**
 
-#### Студент: Александър Иванов, КН група 4, 81841
+**Студент: Александър Иванов, КН група 4, 81841**
 
 ## Съдържание
 
