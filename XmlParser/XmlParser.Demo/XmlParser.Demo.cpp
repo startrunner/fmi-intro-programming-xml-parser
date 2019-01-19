@@ -21,6 +21,7 @@ string read_command_parameter();
 
 map <string, function<void()>> commands{
     {"open", open},
+    {"load", open},
     {"quit", quit},
     {"exit", quit},
     {"end", quit},
