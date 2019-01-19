@@ -121,7 +121,7 @@ bool try_parse_qualifier_set(
         else if (try_parse_attribute_filter(tokenStream, filter))
         {
             attributeFilters.push_back(filter);
-        }
+        } 
         else if (try_parse_identifier(tokenStream, mandatoryAttribute))
         {
             mandatoryAttributes.push_back(mandatoryAttribute);
@@ -150,8 +150,11 @@ bool try_parse_attribute_filter(cached_token_stream &tokenStream, xpath_attribut
     bool success =
         tokenStream.try_cache(3) &&
         tokenStream.peek(0).type == token_type::IDENTIFIER &&
-        (tokenStream.peek(1).type == token_type::EQUALS_SIGN || tokenStream.peek(1).type == token_type::OPENING_SHARP || tokenStream.peek(1).type == token_type::CLOSING_SHARP) &&
-        (tokenStream.peek(2).type == token_type::LITERAL_NUMBER || tokenStream.peek(2).type == token_type::LITERAL_STRING);
+        (tokenStream.peek(1).type == token_type::EQUALS_SIGN || 
+            tokenStream.peek(1).type == token_type::OPENING_SHARP ||
+            tokenStream.peek(1).type == token_type::CLOSING_SHARP) &&
+        (tokenStream.peek(2).type == token_type::LITERAL_NUMBER ||
+            tokenStream.peek(2).type == token_type::LITERAL_STRING);
     if (!success)return false;
 
     token identifier = tokenStream.next_token();

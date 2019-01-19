@@ -42,12 +42,6 @@ token xml_token_stream::next_token()
         auto firstTokenPosition = innerStream.peek(0).position;
         int contentTokens = 0;
 
-        /*while (!innerStream.eof() && innerStream.peek(0).type != token_type::OPENING_SHARP)
-        {
-            token token = innerStream.next_token();
-            contentStream << token.text();
-        }*/
-
         for (int i = 0; innerStream.try_cache(i + 1) && innerStream.peek(i).type != token_type::OPENING_SHARP;i++)
         {
             contentStream << innerStream.peek(i).text();
@@ -75,8 +69,11 @@ token xml_token_stream::next_token()
 
     skip_whitespace();
     token token = innerStream.next_token();
+
     if (token.type == token_type::CLOSING_SHARP)reverseBracketDepth++;
     else if (token.type == token_type::OPENING_SHARP)reverseBracketDepth = max(reverseBracketDepth - 1, 0);
+
+
     return token;
 
 }

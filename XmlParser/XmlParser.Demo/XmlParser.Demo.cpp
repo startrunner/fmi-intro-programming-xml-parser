@@ -17,6 +17,7 @@ xml_context context;
 void open();
 void quit() { exit(0); }
 void select();
+string read_command_parameter();
 
 map <string, function<void()>> commands{
     {"open", open},
@@ -47,9 +48,7 @@ void open()
 {
     while (cin.good())
     {
-        string path;
-        while (isspace(cin.peek()))cin.ignore();
-        getline(cin, path);
+        string path = read_command_parameter();
         if (!filesystem::is_regular_file(path))
         {
             cout << "File does not exist! Try again." << endl;
@@ -68,9 +67,7 @@ void open()
 
 void select()
 {
-    string queryText;
-    while (isspace(cin.peek()))cin.get();
-    getline(cin, queryText);
+    string queryText = read_command_parameter();
 
     if (queryText == "reset")context.reset_selection();
     else
@@ -80,4 +77,12 @@ void select()
     }
 
     context.print(cout);
+}
+
+string read_command_parameter()
+{
+    string parameter;
+    while (isspace(cin.peek()))cin.get();
+    getline(cin, parameter);
+    return parameter;
 }

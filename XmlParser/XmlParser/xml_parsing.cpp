@@ -102,7 +102,7 @@ bool try_parse_node_header(cached_token_stream &tokenStream, string &tagName, ma
     if (!tokenStream.try_cache(2))return false;
     if (tokenStream.peek(0).type != token_type::OPENING_SHARP)return false;
     if (tokenStream.peek(1).type != token_type::IDENTIFIER)return false;
-    ;
+    
     token opening = tokenStream.next_token();
     token identifier = tokenStream.next_token();
 
@@ -160,7 +160,3 @@ bool try_parse_attribute(cached_token_stream &tokenStream, string &key, string &
 
     return true;
 }
-
-
-
-//xml_node parse_node(const token_s)

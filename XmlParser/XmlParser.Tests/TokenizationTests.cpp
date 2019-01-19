@@ -25,9 +25,6 @@ TEST(Tokenization, ExampleXml)
         }
         i++;
     }
-
-    EXPECT_EQ(1, 1);
-    EXPECT_TRUE(true);
 }
 
 TEST(XMLTokenization, ExampleXml)
